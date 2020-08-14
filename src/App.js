@@ -1,10 +1,23 @@
 import React from "react";
+import Rehearsal from "./components/Rehearsal";
+import rehearsalRenderer from "./components/rehearsalRenderer";
+
+const pairs = [
+  ["Dog", "Pies"],
+  ["Cat", "Kot"],
+  ["Fox", "Lis"],
+  ["Mouse", "Mysz"],
+  ["Fish", "Ryba"],
+  ["Bird", "Ptak"],
+  ["Snake", "Wąż"],
+  ["Lion", "Lew"],
+];
 
 function App() {
   return (
-    <div>
-      <h1 className="text-6xl text-center text-blue-600 font-bold">App</h1>
-    </div>
+    <>
+      <Rehearsal pairs={pairs} render={rehearsalRenderer} />
+    </>
   );
 }
 
