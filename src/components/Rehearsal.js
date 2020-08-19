@@ -1,5 +1,5 @@
-// @ts-nocheck
 import { useReducer } from "react";
+import PropTypes from "prop-types";
 import _ from "lodash";
 
 const questionsFromPairs = (pairs) => {
@@ -63,6 +63,11 @@ const Rehearsal = ({ render, pairs }) => {
   const handleReset = () => dispatch({ type: "reset", value: pairs });
 
   return render(state.position, state.questions, handleChoice, handleReset);
+};
+
+Rehearsal.propTypes = {
+  render: PropTypes.func.isRequired,
+  pairs: PropTypes.arrayOf(PropTypes.array).isRequired,
 };
 
 export default Rehearsal;
